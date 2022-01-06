@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter | Post</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Font Awesome CDN Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Font Family CDN Link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Jquery CDN Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <section class="post-sec">
+        <div class="post-header">
+            <div class="user-image">
+                <img src="img/my-image.jpg" title="User Image" alt="didasoff">
+            </div>
+            <div class="user-name">
+                <h2>Mohammad Didar</h2>
+                <p><span>@</span>didasoff</p>
+            </div>
+        </div>
+        <div class="post-area">
+            <form action="">
+                <textarea class="post-input" onkeyup="inputCount(this)" placeholder="What's happening?"></textarea>
+                <div class="text-limit-set">
+                    <p>Text Limit</p>
+                    <p class="text-type-count">300</p>
+                </div>
+                <div class="post-footer">
+                    <div>
+                        <ul>
+                            <li><a href="#" title="Image"><i class="far fa-image"></i></a></li>
+                            <li><a href="#" title="Imoj"><i class="far fa-laugh"></i></a></li>
+                            <li><a href="#" title="Location"><i class="fas fa-map-marker-alt"></i></a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button type="submit" class="post" title="Post">Post</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script>
+        function inputCount(val) {
+            var len = val.value.length;
+            if (len >= 300) {
+                val.value = val.value.substring(0, 300);
+            } else {
+                $('.text-type-count').text(300 - len);
+            }
+        };
+    </script>
+</body>
+
+</html>
